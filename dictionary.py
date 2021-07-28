@@ -1,10 +1,10 @@
 import json
 from difflib import get_close_matches
 
-data = json.load(open("data.json"))
+data = json.load(open("dictionary.json"))
 
 def find(w):
-    w=w.lower()
+    w=w.upper()
     if w in data:
         return data[w]
     elif len(get_close_matches(w,data.keys()))>0:
